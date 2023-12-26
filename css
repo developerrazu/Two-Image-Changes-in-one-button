@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-div {
+    /* display: flex;
+    overflow: hidden; */
+}
+
+.image-container {
+    width: 50%;
+    overflow: hidden;
+}
+
+.image {
+    display: none;
+    width: 100px;
+}
+
+.select {
+    display: block;
+}
+
+.my-btn {
+    margin: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
