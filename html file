@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-div">
+        <div id="leftContainer" class="image-container">
+            <img src="img/im1.jpg" alt="Image 1" class="image select">
+            <img src="img/im2.jpg" alt="Image 2" class="image">
+            <img src="img/im3.jpg" alt="Image 3" class="image">
+            <img src="img/im4.jpg" alt="Image 4" class="image">
+            <img src="img/im5.jpg" alt="Image 5" class="image">
+            <img src="img/im6.jpg" alt="Image 6" class="image">
+            <img src="img/im7.jpg" alt="Image 7" class="image">
+        </div>
+
+        <div id="rightContainer" class="image-container">
+            <img src="img/im1.jpg" alt="Image 1" class="image select">
+            <img src="img/im2.jpg" alt="Image 2" class="image">
+            <img src="img/im3.jpg" alt="Image 3" class="image">
+            <img src="img/im4.jpg" alt="Image 4" class="image">
+            <img src="img/im5.jpg" alt="Image 5" class="image">
+            <img src="img/im6.jpg" alt="Image 6" class="image">
+            <img src="img/im7.jpg" alt="Image 7" class="image">
+        </div>
+    </div>
+    
+    <button class="my-btn" onclick="changeImage()">Reload</button>
+
+    <script>
+        var currentImageIndex = 0;
+
+        function changeImage() {
+            var leftContainer = document.getElementById("leftContainer");
+            var rightContainer = document.getElementById("rightContainer");
+
+            var allImagesLeft = leftContainer.querySelectorAll('.image');
+            var allImagesRight = rightContainer.querySelectorAll('.image');
+
+            allImagesLeft[currentImageIndex].classList.remove('select');
+            allImagesRight[currentImageIndex].classList.remove('select');
+
+            currentImageIndex++;
+            if (currentImageIndex >= allImagesLeft.length) {
+                currentImageIndex = 0;
+            }
+
+            allImagesLeft[currentImageIndex].classList.add('select');
+            allImagesRight[currentImageIndex].classList.add('select');
+        }
+    </script>
+</body>
+</html>
